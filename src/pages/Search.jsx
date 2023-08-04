@@ -108,7 +108,7 @@ function Search({
                       </h2>
                     </Link>
                     <Link to={movie.imdbID}>
-                      <h3 className="search__movie-card--title">
+                      <h3 className="search__movie-card--title search__movie-card--year ">
                         {movie.Year}
                       </h3>
                     </Link>

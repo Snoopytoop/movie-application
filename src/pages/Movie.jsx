@@ -109,6 +109,7 @@ function Movie() {
                     <FontAwesomeIcon
                       icon="fa-regular fa-star"
                       style={{ color: "gold" }}
+                      key={index}
                     />
                   ))}
                 </p>
