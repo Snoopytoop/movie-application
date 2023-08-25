@@ -8,17 +8,18 @@
   text-decoration: none;
 }
 
+button:active {
+  transform: translateY(1px);
+}
+
 .App {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
   background-color: rgb(57, 57, 57);
   
 }
-
-
-
-
 
 body {
   max-width: 100vw;
@@ -53,6 +54,16 @@ nav {
   color: white;
 }
 
+.btn {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 24px;
+  display: none;
+  position: relative;
+}
+
 .nav__list {
   display: flex;
 }
@@ -81,6 +92,30 @@ nav {
 
 .nav__item:hover::after {
   width: 100%;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: grey;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* visibility: hidden; */
+}
+
+.backdrop__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 16px;
+  border: none;
+  background-color: transparent;
+  font-size: 32px;
 }
 
 .home__row {
@@ -276,6 +311,7 @@ input:focus::placeholder {
   margin: 0 auto;
   padding: 64px 0;
   color: white;
+  height: 100%;
 }
 
 .movie__img--wrapper {
@@ -344,6 +380,10 @@ input:focus::placeholder {
   position: sticky; 
   bottom: 0;
   background-color: gray;
+  max-height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 footer {
@@ -367,36 +407,81 @@ footer {
 
 @media (max-width: 950px) {
   .search__container {
-    width: 70%;
+    width: 100%;
   }
-
+  
   .search__movie-card-outer {
     width: 50%;
     padding-top: 85%;
   }
-
+  
   .search__movie-card-poster {
     height: 80%;
   }
-
+  
   .search__movie-card--text {
     height: 20%;
   }
-
+  
   @media (max-width: 750px) {
     .movie__section {
       flex-direction: column-reverse;
     }
-
+    
     .movie__text--wrapper {
       width: 100%;
       padding: 32px;
     }
-
+    
     .movie__img--wrapper {
       width: 80%;
     }
+    
+    .movie__section {
+      padding: 32px 0;
+    }
+    
+    .movie__img--wrapper {
+      padding-bottom: 32px;
+    }
+    
+    
   }
+  
+  @media (max-width: 650px) {
+    
+    .search__movie-card-outer {
+      width: 100%;
+      padding-top: 170%;
+    }
+    
+    .search__movie-card-poster {
+      height: 130%;
+    }
+    
+    .search__movie-card--text {
+      height: 30%;
+    }
 
+    .btn {
+      display: block;
+    }
 
+    .nav__item {
+      display: none;
+    }
+    
+  }
+  
+  @media (max-width: 375px) {
+    .search__movie-card--title {
+      font-size: 16px;
+    }
+    
+    .search__movie-card--year {
+      font-size: 12px;
+    }
+    
+  }
+  
 }

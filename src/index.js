@@ -4,11 +4,11 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faStar, faStarHalfAlt, } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faStarHalfAlt, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
 
 
-library.add(faStar, faStarHalfAlt, faStarRegular);
+library.add(faStar, faStarHalfAlt, faStarRegular, faBars, faXmark);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
